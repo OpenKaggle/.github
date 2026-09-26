@@ -1,0 +1,38 @@
+name: Research or repository proposal
+description: Propose a competition project, experiment, analysis system, or external repository.
+title: "[Proposal] "
+labels: [proposal]
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for bringing work to the OpenKaggle bench. Early ideas are welcome when their status is clear.
+  - type: input
+    id: scope
+    attributes:
+      label: Competition or research scope
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Current status
+      options: [Plan, Exploration, Candidate result, Reproduced result, Archive]
+    validations:
+      required: true
+  - type: textarea
+    id: contribution
+    attributes:
+      label: What would you like to share?
+      description: Repository, notebook, system, technical process, experiment log, research plan, or another contribution.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and reproduction notes
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Data, model, licensing, or privacy boundaries
+    validations:
+      required: true
