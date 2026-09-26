@@ -1,8 +1,8 @@
 # OpenKaggle
 
-<img width="1492" height="1054" alt="image" src="https://github.com/user-attachments/assets/cffefb1c-ef70-42c1-8834-5fa64fa78571" />
-
 **An open workbench for sharing how Kaggle research actually gets made.**
+
+<img width="1492" height="1054" alt="image" src="https://github.com/user-attachments/assets/cffefb1c-ef70-42c1-8834-5fa64fa78571" />
 
 OpenKaggle grows from years of competition folders, experiment traces, unfinished ideas, and hard-won lessons. We turn that material into careful public projects and invite others to work in the open with us.
 
