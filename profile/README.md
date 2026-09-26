@@ -60,6 +60,7 @@ The map changes as older workspaces are separated, documented, and migrated.
 | [`kaggriculture-research`](https://github.com/openkaggle/kaggriculture-research) | Agents, evaluators, research notes, and experiment receipts |
 | [`tartan-imu-research`](https://github.com/openkaggle/tartan-imu-research) | IMU methods, protocols, notebooks, and evidence records |
 | [`traffic-forecasting-research`](https://github.com/openkaggle/traffic-forecasting-research) | Traffic-flow methods, notebooks, campaign records, and provenance |
+| [`tree-species-hsi-research`](https://github.com/openkaggle/tree-species-hsi-research) | Phase 1 and Phase 2 hyperspectral tree-species source, protocols, tests, and lightweight evidence |
 
 ## How we describe evidence
 
