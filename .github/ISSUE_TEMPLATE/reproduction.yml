@@ -1,0 +1,37 @@
+name: Reproduction report
+description: Share what matched, differed, or failed when reproducing published work.
+title: "[Reproduction] "
+labels: [reproduction]
+body:
+  - type: input
+    id: target
+    attributes:
+      label: Work being reproduced
+      description: Repository, commit, experiment ID, notebook, or receipt.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and inputs
+      description: Runtime, hardware, dependency lock, dataset/model versions, and seed.
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: Commands or procedure
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Result and evidence
+      description: Include metrics, logs, hashes, or receipts and distinguish local from leaderboard evidence.
+    validations:
+      required: true
+  - type: textarea
+    id: differences
+    attributes:
+      label: Differences, failures, and uncertainty
+

@@ -1,0 +1,29 @@
+name: Provenance or license question
+description: Clarify the source, redistribution boundary, attribution, or license of an artifact.
+title: "[Provenance] "
+labels: [provenance]
+body:
+  - type: input
+    id: artifact
+    attributes:
+      label: Artifact or path
+    validations:
+      required: true
+  - type: textarea
+    id: current_record
+    attributes:
+      label: Current source and license record
+      description: Provide public links and existing notices without pasting restricted material.
+    validations:
+      required: true
+  - type: textarea
+    id: concern
+    attributes:
+      label: Question or concern
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_resolution
+    attributes:
+      label: Proposed resolution
+

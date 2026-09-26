@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Sensitive security or privacy report
+    url: mailto:jydu_seven@outlook.com
+    about: Please report credentials, private data, and security issues privately.
+  - name: Kaggle platform support
+    url: https://www.kaggle.com/contact
+    about: Account, rules, and platform issues are handled by Kaggle rather than OpenKaggle.

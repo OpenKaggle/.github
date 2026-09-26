@@ -1,0 +1,39 @@
+name: Reproducible bug
+description: Report a focused problem in code, documentation, or a published workflow.
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: input
+    id: repository_revision
+    attributes:
+      label: Repository and revision
+      description: Link the repository and provide the commit SHA when possible.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include the command or notebook entry point, inputs, and environment.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Publication check
+      options:
+        - label: I removed credentials, private identifiers, and restricted competition material.
+          required: true
+
