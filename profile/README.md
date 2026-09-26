@@ -1,8 +1,10 @@
+<p align="center">
+  <img src="assets/openkaggle-primary-white.png" alt="OpenKaggle graduate-duck wordmark" width="640">
+</p>
+
 # OpenKaggle
 
 **An open workbench for sharing how Kaggle research actually gets made.**
-
-<img width="1492" height="1054" alt="image" src="https://github.com/user-attachments/assets/cffefb1c-ef70-42c1-8834-5fa64fa78571" />
 
 OpenKaggle grows from years of competition folders, experiment traces, unfinished ideas, and hard-won lessons. We turn that material into careful public projects and invite others to work in the open with us.
 
@@ -46,23 +48,29 @@ The map changes as older workspaces are separated, documented, and migrated.
 
 | Repository | Purpose |
 | --- | --- |
-| [`kaggle-research-portfolio`](https://github.com/openkaggle/kaggle-research-portfolio) | Project index, external contributions, archive status, migration notes, and related work |
+| [`kaggle-research-portfolio`](https://github.com/OpenKaggle/kaggle-research-portfolio) | Project index, external contributions, archive status, migration notes, and related work |
+
+### Community infrastructure
+
+| Repository | Purpose |
+| --- | --- |
+| [`brand-assets`](https://github.com/OpenKaggle/brand-assets) | Versioned wordmarks, square lockups, provenance, hashes, and contribution guidance |
 
 ### Competition research
 
 | Repository | Scope |
 | --- | --- |
-| [`nemotron-reasoning-research`](https://github.com/openkaggle/nemotron-reasoning-research) | Reasoning competition research, experiments, reports, and submission methods |
-| [`neurogolf-2026-onnx-research`](https://github.com/openkaggle/neurogolf-2026-onnx-research) | ONNX construction, optimization, validation, and competition artifacts |
-| [`maze-crawler-research`](https://github.com/openkaggle/maze-crawler-research) | Agent development, evaluation work, experiment history, and reproducibility material |
-| [`arc2-paper-research`](https://github.com/openkaggle/arc2-paper-research) | ARC2 methods, paper materials, evaluation records, and public notebooks |
-| [`arc3-2026-research`](https://github.com/openkaggle/arc3-2026-research) | ARC-AGI-3 feasibility, policy, and baseline research |
-| [`biohub-cell-tracking-research`](https://github.com/openkaggle/biohub-cell-tracking-research) | Cell-tracking methods, tests, campaign records, and provenance |
-| [`cuhk-x-research`](https://github.com/openkaggle/cuhk-x-research) | CUHK-X large- and small-track research in one reviewable archive |
-| [`kaggriculture-research`](https://github.com/openkaggle/kaggriculture-research) | Agents, evaluators, research notes, and experiment receipts |
-| [`tartan-imu-research`](https://github.com/openkaggle/tartan-imu-research) | IMU methods, protocols, notebooks, and evidence records |
-| [`traffic-forecasting-research`](https://github.com/openkaggle/traffic-forecasting-research) | Traffic-flow methods, notebooks, campaign records, and provenance |
-| [`tree-species-hsi-research`](https://github.com/openkaggle/tree-species-hsi-research) | Phase 1 and Phase 2 hyperspectral tree-species source, protocols, tests, and lightweight evidence |
+| [`nemotron-reasoning-research`](https://github.com/OpenKaggle/nemotron-reasoning-research) | Reasoning competition research, experiments, reports, and submission methods |
+| [`neurogolf-2026-onnx-research`](https://github.com/OpenKaggle/neurogolf-2026-onnx-research) | ONNX construction, optimization, validation, and competition artifacts |
+| [`maze-crawler-research`](https://github.com/OpenKaggle/maze-crawler-research) | Agent development, evaluation work, experiment history, and reproducibility material |
+| [`arc2-paper-research`](https://github.com/OpenKaggle/arc2-paper-research) | ARC2 methods, paper materials, evaluation records, and public notebooks |
+| [`arc3-2026-research`](https://github.com/OpenKaggle/arc3-2026-research) | ARC-AGI-3 feasibility, policy, and baseline research |
+| [`biohub-cell-tracking-research`](https://github.com/OpenKaggle/biohub-cell-tracking-research) | Cell-tracking methods, tests, campaign records, and provenance |
+| [`cuhk-x-research`](https://github.com/OpenKaggle/cuhk-x-research) | CUHK-X large- and small-track research in one reviewable archive |
+| [`kaggriculture-research`](https://github.com/OpenKaggle/kaggriculture-research) | Agents, evaluators, research notes, and experiment receipts |
+| [`tartan-imu-research`](https://github.com/OpenKaggle/tartan-imu-research) | IMU methods, protocols, notebooks, and evidence records |
+| [`traffic-forecasting-research`](https://github.com/OpenKaggle/traffic-forecasting-research) | Traffic-flow methods, notebooks, campaign records, and provenance |
+| [`tree-species-hsi-research`](https://github.com/OpenKaggle/tree-species-hsi-research) | Phase 1 and Phase 2 hyperspectral tree-species source, protocols, tests, and lightweight evidence |
 
 ## How we describe evidence
 
