@@ -95,6 +95,8 @@ We preserve as much research context as possible without pretending that every p
 - When bytes cannot be mirrored, we prefer a source URL, version, checksum, expected path, approximate size, and retrieval instructions.
 - Credentials, private identifiers, restricted data, and unrelated personal files do not belong in public commits.
 
+The practical release gate is documented in [Publishing research from a competition workspace](../PUBLISHING.md).
+
 Unclear cases are discussed patiently. It is always acceptable to publish the method and provenance record before publishing the artifact itself.
 
 ## The atmosphere we want

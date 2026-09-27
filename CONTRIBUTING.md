@@ -53,6 +53,10 @@ Before adding data, weights, competition assets, or third-party outputs:
 
 If an artifact cannot be committed, add a manifest with its source, version, checksum, expected path, approximate size, and retrieval instructions. If the boundary is uncertain, contribute the method and provenance information first and ask.
 
+For the full release gate and the distinction between public research,
+official-data acquisition records, reviewed derivatives, and private
+preservation, read [Publishing research from a competition workspace](PUBLISHING.md).
+
 ## A friendly review process
 
 Review is a conversation about making work easier to trust and reuse. Feedback should be specific, kind, and proportionate to the contribution. Experience level, competition rank, and writing fluency are neither substitutes for evidence nor prerequisites for respect.
