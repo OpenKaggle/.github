@@ -6,11 +6,11 @@
 
 **An open workbench for sharing how Kaggle research actually gets made.**
 
-OpenKaggle grows from years of competition folders, experiment traces, unfinished ideas, and hard-won lessons. We turn that material into careful public projects and invite others to work in the open with us.
+OpenKaggle is a community workbench for transparent competition research: code people can inspect, experiments people can reproduce, and notes that make the work more useful than a leaderboard score alone.
 
-People participate at different levels. Some bring a complete competition pipeline; others share one careful notebook, an analysis system, a production technique, a failed experiment, or a research plan that has not been tested yet. All of these can be useful when their status and limits are explained honestly.
+It is maintained in public by competitors, students, engineers, and researchers who like learning by building. A baseline, a notebook, a technical tool, a careful correction, a useful failure, or a complete system can all start a good conversation here when the provenance and evidence are clear.
 
-You do not need a medal, a polished result, or a grand theory to contribute. Curiosity, evidence, and kindness are enough.
+Bring the work you have. Curiosity, evidence, and generosity are enough; polish can come later.
 
 ## An open workbench
 
@@ -25,7 +25,8 @@ OpenKaggle is a place to share:
 - provenance records, checksums, environment details, and reproduction receipts;
 - open datasets and models when their licenses permit redistribution.
 
-A repository may be complete, actively evolving, or preserved as a historical snapshot. We simply ask that it says which one it is.
+Each repository should plainly say what it is for, what someone can reuse,
+what evidence supports its claims, and what remains outside its scope.
 
 ## Share your work
 
@@ -42,7 +43,7 @@ A small, well-explained contribution is often more useful than a large unexplain
 
 ## Repository map
 
-The map changes as older workspaces are separated, documented, and migrated.
+This is a growing map of shared tools, careful archives, and competition work.
 
 ### Portfolio
 
@@ -72,17 +73,17 @@ The map changes as older workspaces are separated, documented, and migrated.
 | [`traffic-forecasting-research`](https://github.com/OpenKaggle/traffic-forecasting-research) | Traffic-flow methods, notebooks, campaign records, and provenance |
 | [`tree-species-hsi-research`](https://github.com/OpenKaggle/tree-species-hsi-research) | Phase 1 and Phase 2 hyperspectral tree-species source, protocols, tests, and lightweight evidence |
 
-## How we describe evidence
+## Evidence, without ceremony
 
-We welcome work at every stage, but label it clearly:
+OpenKaggle does not ask a project to fit a fixed maturity ladder. A README
+should simply state the question, inputs, method, evidence obtained,
+reproduction path, and known limits. If a repository is an archive or is
+actively maintained, say so in plain language.
 
-- **Plan** — a question, hypothesis, or intended experiment;
-- **Exploration** — useful observations not yet controlled or reproduced;
-- **Candidate result** — measured work with enough context to inspect;
-- **Reproduced result** — rerun successfully under documented conditions;
-- **Archive** — preserved for history and no longer actively maintained.
-
-Local validation, public leaderboard scores, private leaderboard scores, and estimates are different kinds of evidence. Repositories should not blur them together. Failed experiments belong here too: when the setup and outcome are recorded, failure becomes reusable knowledge.
+Local validation, public leaderboard scores, private leaderboard scores, and
+estimates are different kinds of evidence. Repositories should not blur them
+together. Failed experiments belong here too: when the setup and outcome are
+recorded, failure becomes reusable knowledge.
 
 ## Data and license boundaries
 
@@ -101,11 +102,13 @@ Unclear cases are discussed patiently. It is always acceptable to publish the me
 
 ## The atmosphere we want
 
-OpenKaggle is not a leaderboard club, a fund, or a grand institution. It is a long-running workbench maintained by people who enjoy careful competition research and want more of its real process to remain visible.
+OpenKaggle is a friendly, independent workshop: serious about evidence and
+light on ceremony. We value patient explanations, honest uncertainty, compact
+experiments, useful archives, and review that leaves both the work and the
+person sharing it in a better place.
 
-We value patient explanations, honest uncertainty, compact experiments, useful archives, and review that leaves both the work and the person sharing it in a better place.
-
-Come with a complete system or a single interesting trace. There is room at the bench.
+Come with a complete system or a single interesting trace. There is room at
+the bench.
 
 ## Independence
 
