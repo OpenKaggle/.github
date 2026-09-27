@@ -69,9 +69,12 @@ This is a growing map of shared tools, careful archives, and competition work.
 | [`biohub-cell-tracking-research`](https://github.com/OpenKaggle/biohub-cell-tracking-research) | Cell-tracking methods, tests, campaign records, and provenance |
 | [`cuhk-x-research`](https://github.com/OpenKaggle/cuhk-x-research) | CUHK-X large- and small-track research in one reviewable archive |
 | [`kaggriculture-research`](https://github.com/OpenKaggle/kaggriculture-research) | Agents, evaluators, research notes, and experiment receipts |
+| [`playground-s6e9-research`](https://github.com/OpenKaggle/playground-s6e9-research) | Playground-series modelling, validation, and reproducibility materials |
+| [`poker-transfer-research`](https://github.com/OpenKaggle/poker-transfer-research) | Transfer-detection methods, evaluation protocols, and evidence records |
+| [`rogii-wellbore-geology-research`](https://github.com/OpenKaggle/rogii-wellbore-geology-research) | Wellbore-geology training, selection, validation, and operational research notes |
 | [`tartan-imu-research`](https://github.com/OpenKaggle/tartan-imu-research) | IMU methods, protocols, notebooks, and evidence records |
 | [`traffic-forecasting-research`](https://github.com/OpenKaggle/traffic-forecasting-research) | Traffic-flow methods, notebooks, campaign records, and provenance |
-| [`tree-species-hsi-research`](https://github.com/OpenKaggle/tree-species-hsi-research) | Phase 1 and Phase 2 hyperspectral tree-species source, protocols, tests, and lightweight evidence |
+| [`hyperspectral-od-2026-research`](https://github.com/OpenKaggle/hyperspectral-od-2026-research) | Hyperspectral object-detection source, protocols, tests, and lightweight evidence |
 
 ## Evidence, without ceremony
 
