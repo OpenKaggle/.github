@@ -11,10 +11,10 @@ Every file belongs in one of these lanes before it is copied anywhere public.
 
 | Lane | What belongs there | Public destination | What must accompany it |
 | --- | --- | --- | --- |
-| Source and evidence | User-authored code, notebooks with inputs removed, papers, experiment plans, evaluation logic, logs, receipts, figures whose inputs may be shared | The competition repository | README, status, license, and reproduction steps |
+| Source and evidence | User-authored code, notebooks with inputs removed, papers, experiment plans, evaluation logic, validation records, derived replay/trace evidence, receipts, and figures | The competition repository | README, status, license/rules check, and reproduction steps |
 | Acquisition record | Organizer data, external datasets, base models, third-party notebooks, packages, and other files we may use but may not redistribute | A source-and-version record, not a copy | `DATA_SOURCES.md` with official URL, license/rules, version, checksum when practical, expected path, and retrieval command |
-| Reviewed derivative | User-authored features, aggregate statistics, redacted traces, model adapters, or small data products whose redistribution is allowed | The repository or a documented artifact host | License review, provenance, transform, manifest, and checksums |
-| Private preservation | Original competition downloads, full checkpoints, large submission bundles, raw traces, and any item with uncertain rights | A separately verified private archive | Immutable manifest, checksums, retention location, and a clean restore check |
+| Reviewed derivative | User-authored features, aggregate statistics, validation tables, derived replays/traces, model adapters, or small data products whose redistribution is allowed | The repository or a documented artifact host | License review, provenance, transform, manifest, and checksums |
+| Private preservation | Original competition downloads, full checkpoints, large submission bundles, unreviewed raw traces, and any item with uncertain rights | A separately verified private archive | Immutable manifest, checksums, retention location, and a clean restore check |
 
 Do not treat an item as public merely because it is present in a local folder or
 because the surrounding code has an open-source license.
@@ -40,6 +40,30 @@ because the surrounding code has an open-source license.
 6. **Publish and read back.** Push, read the remote commit by hash, clone into
    a clean temporary location, and confirm that documented setup is possible
    without the original workspace.
+
+## Derived evidence can be public when it has a real research boundary
+
+We do not reduce every useful record to a single aggregate number. A
+user-produced validation table, replay, trace, failure case, or experiment
+receipt may be published when all of the following are true:
+
+- it is a genuine product of the research process rather than a copied
+  organizer file, downloaded submission, or third-party export;
+- it does not carry credentials, private account material, or an original file
+  that the competition or upstream source expressly withholds from
+  redistribution;
+- the applicable competition rules, dataset terms, and upstream licences do
+  not expressly prohibit sharing that derivative; and
+- its README says how it was derived, what it proves, and what was deliberately
+  left out.
+
+The fact that a reader might infer something from a well-described experiment,
+or might reproduce the same derived output after obtaining the official inputs,
+does not by itself make the evidence non-public. The boundary is the material
+being distributed: do not mirror the original download or an explicitly
+restricted export, but do preserve the work we made with it. When a rule is
+unclear, retain a receipt and resolve that specific rule question before
+publishing the disputed artifact.
 
 ## Sanitization means making a safe public derivative
 
