@@ -13,8 +13,8 @@ Every file belongs in one of these lanes before it is copied anywhere public.
 | --- | --- | --- | --- |
 | Source and evidence | User-authored code, notebooks with inputs removed, papers, experiment plans, evaluation logic, validation records, derived replay/trace evidence, receipts, and figures | The competition repository | README, status, license/rules check, and reproduction steps |
 | Acquisition record | Organizer data, external datasets, base models, third-party notebooks, packages, and other files we may use but may not redistribute | A source-and-version record, not a copy | `DATA_SOURCES.md` with official URL, license/rules, version, checksum when practical, expected path, and retrieval command |
-| Reviewed derivative | User-authored features, aggregate statistics, validation tables, derived replays/traces, model adapters, or small data products whose redistribution is allowed | The repository or a documented artifact host | License review, provenance, transform, manifest, and checksums |
-| Private preservation | Original competition downloads, full checkpoints, large submission bundles, unreviewed raw traces, and any item with uncertain rights | A separately verified private archive | Immutable manifest, checksums, retention location, and a clean restore check |
+| Reviewed derivative | User-authored features, validation tables, derived replays/traces, checkpoints or adapters, compiled model files, and generated submission bundles whose redistribution is allowed | The repository for small source-adjacent files, otherwise a documented artifact host | License review, provenance, transform where relevant, manifest, and checksums |
+| Private preservation | Original competition downloads, copied upstream weights, unreviewed external artifacts, raw traces, and any item with uncertain rights | A separately verified private archive | Immutable manifest, checksums, retention location, and a clean restore check |
 
 Do not treat an item as public merely because it is present in a local folder or
 because the surrounding code has an open-source license.
@@ -28,9 +28,11 @@ because the surrounding code has an open-source license.
    large path. Classify its author, source, license/rules, size, and release
    lane.
 3. **Remove non-public inputs.** Exclude competition downloads, caches, virtual
-   environments, model weights, `.git` copies, generated submissions, and
-   local credentials by default. Never commit a Kaggle credential, token,
-   cookie, SSH key, or private identifier.
+   environments, copied upstream weights, `.git` copies, unreviewed generated
+   submissions, and local credentials by default. A reviewed user-authored
+   checkpoint, compiled model artifact, or submission bundle belongs in the
+   reviewed-derivative lane instead of being silently discarded. Never commit a
+   Kaggle credential, token, cookie, SSH key, or private identifier.
 4. **Make reproduction concrete.** Add `README.md`, `DATA_SOURCES.md`, and
    `RELEASE_MANIFEST.md`. The last should say exactly what was scanned, what
    was excluded, the source revision, and what verification passed.
@@ -86,17 +88,33 @@ pretending they have the original dataset.
 ## Models and training outputs
 
 Configuration, training code, evaluation recipes, metric outputs, and
-experiment receipts are usually the first things to publish. Checkpoints,
-adapters, embeddings, and generated outputs require a second decision:
+experiment receipts are usually the first things to publish. User-authored
+checkpoints, adapters, compiled model files, embeddings, generated outputs,
+and submission bundles are also publishable research artifacts when they pass
+the following review:
 
 - the base model's license and the competition rules must permit distribution;
-- user-authored deltas must be distinguishable from upstream weights;
+- user-authored deltas must be distinguishable from upstream weights, and a
+  submission must be distinguishable from any organizer input it consumed;
 - the artifact must pass the same secret and data-boundary review;
 - large allowed artifacts need a documented host and SHA-256, not a giant Git
-  history.
+  history; and
+- its release manifest must name the producing source revision, command or
+  recipe, base-model source and licence where applicable, exact files, sizes,
+  and hashes.
 
-When the artifact itself cannot be shared, release the recipe, source link,
-version, checksum, and expected output layout instead.
+Use the competition repository for source and the artifact host for bytes. A
+small public artifact may live alongside its source; a large collection belongs
+in a public Kaggle Dataset or a GitHub Release. If a transport limit requires
+splitting an allowed artifact, publish a deterministic `REASSEMBLE.md` and
+checksums for both the parts and the reconstructed file. Splitting is for
+reliable delivery, not a way to hide an opaque archive.
+
+When an artifact itself cannot be shared because of its actual licence or
+competition rule, release the recipe, source link, version, checksum, and
+expected output layout instead. Do not withhold an otherwise permitted
+user-produced model or submission simply because it is large or could be
+reproduced from the official inputs.
 
 ## Deleting a local copy
 
