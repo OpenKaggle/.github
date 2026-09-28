@@ -137,7 +137,7 @@ jobs:
               await github.rest.issues.removeLabel({ owner, repo, issue_number: issueNumber, name: 'invite-blocked' }).catch(() => {});
               await github.rest.issues.createComment({
                 owner, repo, issue_number: issueNumber,
-                body: `${marker}\nAn organization invitation was sent automatically to **@${username}**. Please accept it from GitHub notifications or email; GitHub does not allow this workflow to accept the invitation on the member's behalf. (API status: ${response.status})`
+                body: `${marker}\nYour OpenKaggle invitation was sent automatically to **@${username}**. Next: open GitHub notifications and click **Accept invitation**. If email notifications are enabled, GitHub may also send an organization-invitation email; delivery can vary, so notifications are the reliable place to check. If nothing appears, check the invitation page and edit this issue or ask an owner/member to use \`/invite\` for a retry. (API status: ${response.status})`
               });
             }
 

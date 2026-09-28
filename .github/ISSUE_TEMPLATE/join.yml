@@ -13,6 +13,8 @@ body:
         invitation for the account that opened this issue; GitHub still asks
         that account to accept it. Membership is optional: public issues and
         pull requests are open even if you do not join the organization.
+        Welcome — this should take about a minute. You do not need a polished
+        project, a repository, or an attachment to join.
   - type: dropdown
     id: interest
     attributes:
@@ -43,3 +45,11 @@ body:
           required: true
         - label: I understand that GitHub requires me to accept the invitation before membership becomes active.
           required: true
+  - type: markdown
+    attributes:
+      value: >-
+        **What happens next:** submit this form, wait for the automatic GitHub
+        invitation, then click **Accept invitation** in GitHub notifications or
+        the invitation email. If you only want to read or contribute publicly,
+        you can stop here without joining. Please never paste passwords, API
+        tokens, private competition files, or other people's restricted files.

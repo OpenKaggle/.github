@@ -10,8 +10,9 @@ joining the organization.
 1. Open the [Join OpenKaggle issue form](https://github.com/OpenKaggle/.github/issues/new?template=join.yml).
 2. Use your own GitHub account. GitHub records the account automatically, so
    there is no username to copy or type. Describe what you would like to share or
-   learn. Do not include credentials, private competition rows, or third-party
-   files.
+   learn. One sentence is enough; you do not need a polished project or an
+   attachment. Do not include credentials, private competition rows, or
+   third-party files.
 3. When the required checkboxes are selected, the workflow uses the account
    that opened the issue and sends a least-privilege member invitation
    automatically. No OpenKaggle owner comment is required.
@@ -19,6 +20,11 @@ joining the organization.
    security boundary: the workflow cannot and should not accept it on another
    person's behalf. A member or owner can still use `/invite` as a manual
    fallback if an edited issue needs a retry.
+
+After the invitation is sent, check GitHub notifications first. If email
+notifications are enabled for the account, GitHub may also send an
+organization-invitation email, but email delivery is not guaranteed. No code,
+repository, or data upload is required to join.
 
 The automatic invitation step requires the organization owner to configure the
 private Actions secret `OPENKAGGLE_ORG_MEMBERS_TOKEN` with the minimum
