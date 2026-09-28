@@ -6,8 +6,6 @@
 
 **An open workbench for sharing how Kaggle research actually gets made.**
 
-<p><sub>credo · make it public, make it useful.</sub></p>
-
 **Start here:** [🦆 Take a seat at the OpenKaggle bench](https://github.com/OpenKaggle/.github/issues/1) · [Contributing](../CONTRIBUTING.md) · [Publishing](../PUBLISHING.md) · [Citation](../CITATION_POLICY.md) · [Support](../SUPPORT.md)
 
 OpenKaggle is a small, open workbench for sharing the real texture of Kaggle
