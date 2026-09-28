@@ -11,7 +11,8 @@ body:
         OpenKaggle is a small, open workbench for competition research and
         reproducible experiments. A complete form automatically starts an
         invitation for the account that opened this issue; GitHub still asks
-        that account to accept it.
+        that account to accept it. Membership is optional: public issues and
+        pull requests are open even if you do not join the organization.
   - type: dropdown
     id: interest
     attributes:
