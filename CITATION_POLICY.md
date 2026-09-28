@@ -131,6 +131,22 @@ Keep the citation block near the end of the README, after scope and
 reproduction instructions. Readers should understand what the project is
 before they are asked to cite it.
 
+For a repository to be a credible thing to cite, keep a short contribution
+summary near the README introduction. Where applicable, distinguish:
+
+- source or code;
+- methods or research question;
+- experiments, models, adapters, or ONNX artifacts;
+- evidence and reproducibility; and
+- boundary, licensing, and official/third-party material.
+
+At the end of the README, keep `Cite this repository`, `References`, and
+`Release` information together. `CITATION.cff` and `CITATION.bib` are the
+machine-readable layer; the summary and release note are the human-readable
+layer. This is a compact archive convention, not a requirement to write a
+paper or to copy a fixed directory structure. Each project should customize
+the wording to its actual research and omit sections that do not apply.
+
 ## Data, model, and evidence boundaries
 
 Citation metadata does not change redistribution rights. Apply the OpenKaggle

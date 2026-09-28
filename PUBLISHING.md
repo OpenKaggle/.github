@@ -43,6 +43,17 @@ because the surrounding code has an open-source license.
    a clean temporary location, and confirm that documented setup is possible
    without the original workspace.
 
+The contribution may be a small note, a failed experiment, a model adapter, or
+a large evidence archive; it does not need to resemble a paper or follow a
+single directory layout. The public minimum is a readable README entry,
+source and license/provenance information, a command or explicit limitation
+for reproduction, and a `MANIFEST`/SHA-256 record when the files are large or
+generated. Large permitted bytes belong in a Release, Kaggle Dataset, or
+another documented artifact host rather than Git history. Never use that host
+to distribute credentials, personal sensitive data, unauthorized official or
+holdout data, third-party files without redistribution rights, malicious code,
+hidden telemetry, or exaggerated results.
+
 ## Derived evidence can be public when it has a real research boundary
 
 We do not reduce every useful record to a single aggregate number. A

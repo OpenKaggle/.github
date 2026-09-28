@@ -38,6 +38,37 @@ size alone is not a reason to hide an otherwise permitted user-produced
 artifact, and a public repository is not automatically allowed to mirror an
 official or third-party file.
 
+## Ordinary contribution and submission flow
+
+Small, focused changes may go directly to a pull request. For a larger or
+irreversible change, opening a proposal issue first is recommended so that
+scope and assumptions can be discussed, but it is not a mandatory ceremony.
+The same route is open to first-time contributors and established projects.
+
+OpenKaggle does not require a uniform directory tree or a paper-shaped
+manuscript. Each project should instead keep a short README entry explaining
+what the contribution is, where it came from, how to run or inspect it, and
+what cannot be reproduced. Use the project’s actual structure and omit empty
+sections rather than copying boilerplate.
+
+| Contribution type | Recommended public material |
+| --- | --- |
+| Source or code | Source files, tests, environment notes, and a focused README entry |
+| Methods or research notes | Hypothesis, method, assumptions, decision record, and known limits |
+| Experiments or models | Configurations, evaluation recipe, model/adapter/ONNX provenance, and metrics |
+| Failure or negative result | Setup, attempted method, observed failure, and evidence that supports the conclusion |
+| Reproduction | Source revision, inputs or official retrieval path, command, environment, and receipt |
+| Derived evidence | Transform or aggregation logic, manifest, checksums, and a clear boundary statement |
+| Data-source record | Official URL, version, license/rules, expected path, checksum when practical, and retrieval instructions |
+| Documentation or design | User-facing explanation, diagrams, review context, and maintenance status |
+
+Do not publish credentials, personal sensitive data, unauthorized official or
+holdout data, third-party files without redistribution rights, malicious code,
+hidden telemetry, or inflated claims. A model or derived artifact is welcome
+when its license/rules and provenance permit release. Put large permitted
+bytes in a documented GitHub Release, Kaggle Dataset, or equivalent artifact
+host; do not place them in ordinary Git history.
+
 ## Contributing to an existing project
 
 1. Read the project README and current status.
