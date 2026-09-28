@@ -45,6 +45,7 @@ jobs:
             await ensureLabel('join-request', '0e8a16', 'Request to join the OpenKaggle organization');
             await ensureLabel('needs-review', 'fbca04', 'Waiting for a maintainer review');
             await ensureLabel('invited', '5319e7', 'An organization invitation was sent');
+            await ensureLabel('bot-triaged', 'bfdadc', 'The join request received the standard triage response');
 
             const trustedApprover = comment && ['OWNER', 'MEMBER'].includes(comment.author_association);
             const command = comment?.body?.trim().toLowerCase();
@@ -90,7 +91,8 @@ jobs:
               return;
             }
 
-            if (!issue.body?.includes(marker)) {
+            if (!labels.has('bot-triaged')) {
+              await github.rest.issues.addLabels({ owner, repo, issue_number: issueNumber, labels: ['bot-triaged'] });
               await github.rest.issues.createComment({
                 owner, repo, issue_number: issueNumber,
                 body: `${marker}\nThanks for the request. An owner will review the account and contribution context. If everything is clear, an owner can comment \`/invite\`; until then, please do not paste credentials, private competition rows, or third-party files here.`
