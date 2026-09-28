@@ -57,6 +57,12 @@ For the full release gate and the distinction between public research,
 official-data acquisition records, reviewed derivatives, and private
 preservation, read [Publishing research from a competition workspace](PUBLISHING.md).
 
+For the shared academic-style citation shape, use the
+[citation and archival standard](CITATION_POLICY.md) and copy the templates
+from [`templates/`](templates/). Each repository should expose a
+`CITATION.cff`, a synchronized `CITATION.bib`, and a README `## Citation`
+block once it has a citable release.
+
 ## A friendly review process
 
 Review is a conversation about making work easier to trust and reuse. Feedback should be specific, kind, and proportionate to the contribution. Experience level, competition rank, and writing fluency are neither substitutes for evidence nor prerequisites for respect.

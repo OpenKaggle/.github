@@ -101,6 +101,11 @@ We preserve as much research context as possible without pretending that every p
 
 The practical release gate is documented in [Publishing research from a competition workspace](../PUBLISHING.md).
 
+For a consistent way to cite a repository, model, report, or artifact release,
+see the [OpenKaggle citation and archival standard](../CITATION_POLICY.md).
+It uses `CITATION.cff`, a synchronized BibTeX entry, a README citation block,
+and a versioned release or DOI when one exists.
+
 Unclear cases are discussed patiently. It is always acceptable to publish the method and provenance record before publishing the artifact itself.
 
 ## The atmosphere we want

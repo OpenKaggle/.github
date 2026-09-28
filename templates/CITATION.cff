@@ -1,0 +1,33 @@
+# OpenKaggle repository citation template.
+# Replace every REPLACE_* value before committing this file to a project.
+# See ../CITATION_POLICY.md for release, DOI, and data-boundary guidance.
+cff-version: 1.2.0
+message: "If you use this work, please cite the version you used."
+type: software
+title: "REPLACE_PROJECT_TITLE"
+abstract: >-
+  REPLACE_ONE_SENTENCE_DESCRIPTION_OF_THE_RESEARCH_ARCHIVE
+authors:
+  - family-names: "REPLACE_FAMILY_NAME"
+    given-names: "REPLACE_GIVEN_NAME"
+    # orcid: "https://orcid.org/REPLACE_ORCID"
+  # Add contributors in documented contribution order.
+  # - name: "OpenKaggle contributors"
+keywords:
+  - REPLACE_KEYWORD
+  - reproducibility
+  - Kaggle
+license: REPLACE_SPDX_LICENSE
+repository-code: "https://github.com/OpenKaggle/REPLACE_REPOSITORY"
+url: "https://github.com/OpenKaggle/REPLACE_REPOSITORY/releases/tag/REPLACE_TAG"
+version: "REPLACE_VERSION_OR_SNAPSHOT"
+date-released: REPLACE_RELEASE_DATE
+# doi: "https://doi.org/REPLACE_VERSION_DOI"
+# preferred-citation:
+#   type: article
+#   title: "REPLACE_PAPER_TITLE"
+#   authors:
+#     - family-names: "REPLACE_FAMILY_NAME"
+#       given-names: "REPLACE_GIVEN_NAME"
+#   year: REPLACE_PAPER_YEAR
+#   doi: "https://doi.org/REPLACE_PAPER_DOI"
