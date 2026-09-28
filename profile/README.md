@@ -6,6 +6,8 @@
 
 **An open workbench for sharing how Kaggle research actually gets made.**
 
+<p><sub>credo · make it public, make it useful.</sub></p>
+
 **Start here:** [👋 Join OpenKaggle](https://github.com/OpenKaggle/.github/issues/new?template=join.yml) · [Contributing](../CONTRIBUTING.md) · [Publishing](../PUBLISHING.md) · [Citation](../CITATION_POLICY.md) · [Support](../SUPPORT.md)
 
 OpenKaggle is a small, open workbench for sharing the real texture of Kaggle
@@ -19,13 +21,13 @@ baseline, a surprising result, a careful correction, or a question.
 We care about where work came from and what was actually tested, but you do not
 need a polished paper to join.
 
-<p align="center">
+<p align="left">
   <a href="https://github.com/OpenKaggle/.github/issues/new?template=join.yml">
-    <img src="https://raw.githubusercontent.com/OpenKaggle/brand-assets/main/assets/openkaggle-join-button-v1.png" alt="Join OpenKaggle — start in about a minute" width="760">
+    <img src="https://raw.githubusercontent.com/OpenKaggle/brand-assets/main/assets/openkaggle-join-button-v1.png" alt="Join OpenKaggle — start in about a minute" width="560">
   </a>
 </p>
 
-<p align="center">
+<p align="left">
   <a href="https://github.com/OpenKaggle/.github/issues/new?template=join.yml">Open the one-minute Join form</a> · No polished project or upload needed.
 </p>
 

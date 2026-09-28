@@ -3,6 +3,8 @@
 Welcome to the workbench. OpenKaggle is for competitors, students, engineers,
 and curious builders who enjoy making useful things in public.
 
+<sub>credo · make it public, make it useful.</sub>
+
 You do not need a polished paper, a finished repository, or a perfect idea.
 
 ## The one-minute path
