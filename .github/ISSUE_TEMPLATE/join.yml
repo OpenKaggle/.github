@@ -9,8 +9,8 @@ body:
     attributes:
       value: >-
         OpenKaggle is a small, open workbench for competition research and
-        reproducible experiments. This form starts a reviewable invitation
-        request; it does not grant access automatically.
+        reproducible experiments. A complete form automatically starts an
+        invitation; GitHub still asks the invited account to accept it.
   - type: input
     id: github_username
     attributes:
@@ -47,5 +47,5 @@ body:
           required: true
         - label: I will not upload credentials, restricted competition data, or third-party material without permission.
           required: true
-        - label: I understand that an owner may ask for clarification before sending an invitation.
+        - label: I understand that GitHub requires me to accept the invitation before membership becomes active.
           required: true

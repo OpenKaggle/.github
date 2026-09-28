@@ -6,6 +6,12 @@ on:
   issue_comment:
     types: [created]
 
+concurrency:
+  # Serialize retries for one request, but never cancel a run that is already
+  # talking to the GitHub membership API.
+  group: openkaggle-join-${{ github.event.issue.number || github.run_id }}
+  cancel-in-progress: false
+
 permissions:
   contents: read
   issues: write
@@ -17,7 +23,7 @@ jobs:
       contains(github.event.issue.labels.*.name, 'join-request')
     runs-on: ubuntu-latest
     steps:
-      - name: Triage request or send owner-approved invitation
+      - name: Triage request and send automatic invitation
         uses: actions/github-script@v7
         env:
           ORG_MEMBERS_TOKEN: ${{ secrets.OPENKAGGLE_ORG_MEMBERS_TOKEN }}
@@ -45,23 +51,16 @@ jobs:
             await ensureLabel('join-request', '0e8a16', 'Request to join the OpenKaggle organization');
             await ensureLabel('needs-review', 'fbca04', 'Waiting for a maintainer review');
             await ensureLabel('invited', '5319e7', 'An organization invitation was sent');
+            await ensureLabel('invite-failed', 'd93f0b', 'Automatic invitation needs a retry');
             await ensureLabel('bot-triaged', 'bfdadc', 'The join request received the standard triage response');
 
-            const trustedApprover = comment && ['OWNER', 'MEMBER'].includes(comment.author_association);
             const command = comment?.body?.trim().toLowerCase();
 
-            if (eventName === 'issue_comment' && command === '/invite') {
-              if (!trustedApprover) {
-                await github.rest.issues.createComment({
-                  owner, repo, issue_number: issueNumber,
-                  body: `${marker}\nOnly an OpenKaggle owner or member can approve an invitation. The request remains queued for review.`
-                });
-                return;
-              }
+            async function inviteApplicant() {
               if (!process.env.ORG_MEMBERS_TOKEN) {
                 await github.rest.issues.createComment({
                   owner, repo, issue_number: issueNumber,
-                  body: `${marker}\nThe request is approved for review, but the organization membership token is not configured. An owner must add the \`OPENKAGGLE_ORG_MEMBERS_TOKEN\` Actions secret before an invitation can be sent.`
+                  body: `${marker}\nThe request is complete, but automatic invitations are not enabled yet. An owner must add the private \`OPENKAGGLE_ORG_MEMBERS_TOKEN\` Actions secret.`
                 });
                 return;
               }
@@ -71,23 +70,111 @@ jobs:
                 throw new Error(`Unexpected GitHub login format: ${username}`);
               }
 
-              const response = await github.request('PUT /orgs/{org}/memberships/{username}', {
-                org: 'OpenKaggle',
-                username,
-                role: 'member',
+              const apiOptions = {
                 headers: {
                   authorization: `Bearer ${process.env.ORG_MEMBERS_TOKEN}`,
                   'X-GitHub-Api-Version': '2022-11-28',
                   accept: 'application/vnd.github+json'
                 }
-              });
+              };
+
+              // Read first so replays are harmless when an invitation is
+              // already pending or the applicant accepted it between runs.
+              try {
+                const membership = await github.request('GET /orgs/{org}/memberships/{username}', {
+                  org: 'OpenKaggle', username, ...apiOptions
+                });
+                if (membership.data.state === 'active') {
+                  await github.rest.issues.addLabels({ owner, repo, issue_number: issueNumber, labels: ['invited'] });
+                  await github.rest.issues.createComment({
+                    owner, repo, issue_number: issueNumber,
+                    body: `${marker}\n**@${username}** is already an active OpenKaggle member. No new invitation was sent.`
+                  });
+                  return;
+                }
+                if (membership.data.state === 'pending') {
+                  await github.rest.issues.addLabels({ owner, repo, issue_number: issueNumber, labels: ['invited'] });
+                  await github.rest.issues.createComment({
+                    owner, repo, issue_number: issueNumber,
+                    body: `${marker}\nAn OpenKaggle invitation is already pending for **@${username}**. Please accept it from GitHub notifications or email.`
+                  });
+                  return;
+                }
+              } catch (error) {
+                if (error.status !== 404) throw error;
+              }
+
+              let response;
+              let lastError;
+              for (let attempt = 1; attempt <= 3; attempt += 1) {
+                try {
+                  response = await github.request('PUT /orgs/{org}/memberships/{username}', {
+                    org: 'OpenKaggle', username, role: 'member', ...apiOptions
+                  });
+                  break;
+                } catch (error) {
+                  lastError = error;
+                  if (attempt < 3) await new Promise((resolve) => setTimeout(resolve, 1500 * attempt));
+                }
+              }
+              if (!response) throw lastError;
 
               await github.rest.issues.addLabels({ owner, repo, issue_number: issueNumber, labels: ['invited'] });
               await github.rest.issues.removeLabel({ owner, repo, issue_number: issueNumber, name: 'needs-review' }).catch(() => {});
+              await github.rest.issues.removeLabel({ owner, repo, issue_number: issueNumber, name: 'invite-failed' }).catch(() => {});
               await github.rest.issues.createComment({
                 owner, repo, issue_number: issueNumber,
-                body: `${marker}\nAn organization invitation was sent to **@${username}**. Please accept it from GitHub notifications or email; GitHub does not allow this workflow to accept the invitation on the member's behalf. (API status: ${response.status})`
+                body: `${marker}\nAn organization invitation was sent automatically to **@${username}**. Please accept it from GitHub notifications or email; GitHub does not allow this workflow to accept the invitation on the member's behalf. (API status: ${response.status})`
               });
+            }
+
+            const body = issue.body || '';
+            const usernameField = body.match(/### GitHub username\s+([^\n]+)/i)?.[1]?.trim();
+            const requiredChecks = [
+              'I have read and will follow the Code of Conduct.',
+              'I will not upload credentials, restricted competition data, or third-party material without permission.',
+              'I understand that GitHub requires me to accept the invitation before membership becomes active.'
+            ];
+            const formComplete = Boolean(
+              usernameField && usernameField.toLowerCase() === issue.user.login.toLowerCase() &&
+              requiredChecks.every((text) => body.includes(`- [x] ${text}`))
+            );
+
+            if (eventName !== 'issue_comment' && formComplete && !labels.has('invited')) {
+              try {
+                await inviteApplicant();
+              } catch (error) {
+                await github.rest.issues.addLabels({ owner, repo, issue_number: issueNumber, labels: ['invite-failed'] });
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number: issueNumber,
+                  body: `${marker}\nThe automatic invitation could not be completed after three attempts. No credential or API response was exposed here. A member or owner can retry with \`/invite\`; workflow run: ${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}`
+                });
+                core.setFailed(`Automatic invitation failed: ${error.message}`);
+              }
+              return;
+            }
+
+            if (eventName === 'issue_comment' && command === '/invite') {
+              const trustedApprover = ['OWNER', 'MEMBER'].includes(comment.author_association);
+              if (!trustedApprover) {
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number: issueNumber,
+                  body: `${marker}\nAutomatic invitations are enabled for complete forms. Only an OpenKaggle owner or member may use the manual fallback command.`
+                });
+                return;
+              }
+              if (!labels.has('invited')) {
+                try {
+                  await inviteApplicant();
+                } catch (error) {
+                  await github.rest.issues.addLabels({ owner, repo, issue_number: issueNumber, labels: ['invite-failed'] });
+                  await github.rest.issues.createComment({
+                    owner, repo, issue_number: issueNumber,
+                    body: `${marker}\nThe manual invitation retry failed. No credential or API response was exposed here. Workflow run: ${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}`
+                  });
+                  core.setFailed(`Manual invitation failed: ${error.message}`);
+                }
+              }
               return;
             }
 
@@ -95,7 +182,7 @@ jobs:
               await github.rest.issues.addLabels({ owner, repo, issue_number: issueNumber, labels: ['bot-triaged'] });
               await github.rest.issues.createComment({
                 owner, repo, issue_number: issueNumber,
-                body: `${marker}\nThanks for the request. An owner will review the account and contribution context. If everything is clear, an owner can comment \`/invite\`; until then, please do not paste credentials, private competition rows, or third-party files here.`
+                body: `${marker}\nThanks for the request. When the form fields and required checkboxes are complete, the workflow sends an invitation automatically. Please do not paste credentials, private competition rows, or third-party files here.`
               });
             }
             await github.rest.issues.addLabels({ owner, repo, issue_number: issueNumber, labels: ['join-request', 'needs-review'] });

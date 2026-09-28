@@ -11,19 +11,31 @@ joining the organization.
 2. Use your own GitHub account and describe what you would like to share or
    learn. Do not include credentials, private competition rows, or third-party
    files.
-3. An owner reviews the request. The bot adds `needs-review` and explains the
-   next step; it does not grant access merely because an issue was opened.
-4. After an owner has reviewed the request, the owner may comment `/invite`.
-   The workflow sends a least-privilege member invitation and records the
-   action on the issue.
-5. The applicant must accept the invitation in GitHub. The workflow cannot and
-   should not accept it on another person's behalf.
+3. When the username matches the account that opened the issue and all required
+   checkboxes are selected, the workflow sends a least-privilege member
+   invitation automatically. No OpenKaggle owner comment is required.
+4. The applicant must accept the invitation in GitHub. This is a GitHub account
+   security boundary: the workflow cannot and should not accept it on another
+   person's behalf. A member or owner can still use `/invite` as a manual
+   fallback if an edited issue needs a retry.
 
-The invitation step requires the organization owner to configure the private
-Actions secret `OPENKAGGLE_ORG_MEMBERS_TOKEN` with the minimum organization
-membership-write permission. The secret is never printed or placed in an
-issue. If it is not configured, the workflow only triages requests and an
-owner can send the invitation through GitHub's normal UI.
+The automatic invitation step requires the organization owner to configure the
+private Actions secret `OPENKAGGLE_ORG_MEMBERS_TOKEN` with the minimum
+organization-membership-write permission. The secret is never printed or
+placed in an issue. Until it is configured, the workflow only triages requests
+and does not send invitations.
+
+The workflow is idempotent and recoverable: it serializes runs for one issue,
+checks whether the account is already active or pending before sending a new
+invitation, retries transient API failures three times, records an
+`invite-failed` label without exposing credentials, and supports a member/owner
+`/invite` retry. Workflow changes become active only after they are merged into
+the repository's default branch; pull-request branches are not used to grant
+membership.
+
+The flow intentionally invites only the account that opened the issue. It does
+not randomly invite arbitrary accounts or accept invitations on behalf of
+people, which would make the organization a spam and account-takeover vector.
 
 Membership is not a promise of repository write access. Repository permissions
 and teams are granted separately and only when a project needs them.
