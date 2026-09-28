@@ -19,6 +19,11 @@ baseline, a surprising result, a careful correction, or a question.
 We care about where work came from and what was actually tested, but you do not
 need a polished paper to join.
 
+## 👋 [Join OpenKaggle in about a minute →](https://github.com/OpenKaggle/.github/issues/new?template=join.yml)
+
+No polished project. No upload. Just choose what interests you, write one
+sentence, and we will show you the next step.
+
 ### New here? 🦆
 
 Bring a notebook, a question, a useful correction, or just curiosity. One
