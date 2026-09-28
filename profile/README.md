@@ -23,12 +23,12 @@ need a polished paper to join.
 
 <p align="left">
   <a href="https://github.com/OpenKaggle/.github/issues/new?template=join.yml">
-    <img src="https://raw.githubusercontent.com/OpenKaggle/brand-assets/main/assets/openkaggle-join-button-v1.png" alt="Join OpenKaggle — start in about a minute" width="560">
+    <img src="https://raw.githubusercontent.com/OpenKaggle/brand-assets/main/assets/openkaggle-join-button-v1.png" alt="Join OpenKaggle — start in about a minute" width="480">
   </a>
 </p>
 
 <p align="left">
-  <a href="https://github.com/OpenKaggle/.github/issues/new?template=join.yml">Open the one-minute Join form</a> · No polished project or upload needed.
+  <sub><a href="https://github.com/OpenKaggle/.github/issues/new?template=join.yml">Open the one-minute Join form →</a> · No upload needed.</sub>
 </p>
 
 ### New here? 🦆
