@@ -46,6 +46,10 @@ jobs:
 
             if (!actor || actor.type !== 'User' || actor.login.endsWith('[bot]')) return;
 
+            // Let organizers leave the short phrase as a visual example without
+            // producing an unnecessary bot reply or membership API call.
+            if (joinPhrase && maintainer) return;
+
             let username;
             let source;
             if (manualInvite && maintainer) {
