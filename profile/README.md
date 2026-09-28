@@ -14,13 +14,10 @@ that are still taking shape.
 
 It is a place for competitors, students, engineers, and curious builders who
 like making things in public. Bring a notebook, a useful script, a clean
-baseline, a surprising result, a careful correction, or a question. We care
-about where work came from and what was actually tested, but you do not need a
-polished paper to join.
+baseline, a surprising result, a careful correction, or a question.
 
-OpenKaggle 是一个开放的小型工作台：分享代码、实验、记录和还在形成中的
-想法。你可以带来一个 notebook、一段工具代码、一次失败的尝试，或者一个
-值得继续追问的问题。先把东西放到桌面上，慢慢把它做清楚。
+We care about where work came from and what was actually tested, but you do not
+need a polished paper to join.
 
 ## An open workbench
 
