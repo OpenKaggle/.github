@@ -46,6 +46,18 @@ Use the narrowest citation that supports the claim:
 5. **A third-party model, notebook, package, or baseline:** cite its original
    author and license in addition to any OpenKaggle analysis that used it.
 
+The repository citation and the academic-source citation are separate layers:
+
+- `CITATION.cff` and an `@software{...}` entry identify the executable
+  repository or release that was used;
+- the README may add a `References` section, and `CITATION.bib` may include
+  related `@article{...}`, `@inproceedings{...}`, `@phdthesis{...}`, or other
+  scholarly entries when they genuinely describe the method, benchmark, or
+  upstream work; and
+- an academic entry must not be invented to make a competition archive look
+  like a paper. If no paper, proceedings article, or thesis exists, cite the
+  software/archive release and label it honestly.
+
 If a paper later describes the work, add it as `preferred-citation` in
 `CITATION.cff`, but keep the software/archive citation available: the paper
 and the executable research object are related, not interchangeable.

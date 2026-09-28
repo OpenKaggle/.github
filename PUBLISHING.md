@@ -116,6 +116,43 @@ expected output layout instead. Do not withhold an otherwise permitted
 user-produced model or submission simply because it is large or could be
 reproduced from the official inputs.
 
+## Corrections, withdrawal, and post-publication audit
+
+Publication is revisable. A correction is appropriate when the bytes may stay
+public but the description, provenance, citation, checksum, or reproduction
+claim is wrong. A withdrawal or restriction is appropriate when an asset is
+not safe or permitted to remain public, including an accidental credential,
+private identifier, restricted row, or incorrectly redistributed upstream
+file.
+
+Use this sequence:
+
+1. Open a public correction issue or pull request when the description can be
+   safely discussed. For sensitive cases, email the private contact in
+   `SECURITY.md` with the URL/path and a minimal explanation; do not paste the
+   affected material.
+2. Freeze the affected release or link while the maintainer confirms the
+   scope. Treat Git history, release assets, Kaggle versions, caches, and DOI
+   deposits as separate surfaces to audit.
+3. For a correction, publish the replacement text or asset with a new commit
+   or release, preserve the old hash in the audit note when it is safe, and
+   state exactly what changed. For a withdrawal, remove or restrict the
+   affected surface, rotate exposed credentials if applicable, and leave a
+   minimal tombstone explaining that the item was withdrawn without repeating
+   the sensitive content.
+4. Re-run the relevant secret, boundary, manifest, hash, and reproduction
+   checks. Record the surviving public source revision, replacement URL, and
+   known limits in the issue, pull request, or release note.
+5. If old Git objects, release caches, or an external host still retain the
+   material, follow that host's removal process; deleting the current file is
+   not presented as complete erasure. Do not rewrite history casually: obtain
+   owner approval, preserve a private incident record, and verify the new
+   clone and release surfaces if history repair is required.
+
+The organization keeps the public record focused on what a reader needs to
+trust the current release. Private incident details and re-identification
+maps remain private and are not used as a substitute for a public status note.
+
 ## Deleting a local copy
 
 Public source is not a backup for a 75–120 GiB workspace. Delete a local item

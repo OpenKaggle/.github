@@ -1,0 +1,47 @@
+name: Archive correction or withdrawal
+description: Correct provenance or request a safe replacement, restriction, or withdrawal of a published item.
+title: "[Archive] "
+labels: [provenance]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Do not include credentials, private identifiers, restricted rows, or
+        copied upstream material here. If the report itself is sensitive, use
+        SECURITY.md and provide only a minimal public locator.
+  - type: dropdown
+    id: action
+    attributes:
+      label: Requested action
+      options:
+        - Correct documentation, provenance, or citation
+        - Replace a release or artifact with a verified version
+        - Restrict or withdraw a published item
+    validations:
+      required: true
+  - type: input
+    id: locator
+    attributes:
+      label: Public repository, release, or path
+      description: Link to the affected public surface without pasting the material.
+    validations:
+      required: true
+  - type: textarea
+    id: safe_summary
+    attributes:
+      label: Safe summary
+      description: Explain the issue without reproducing sensitive content.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Verification or replacement evidence
+      description: Include a public commit, manifest, checksum, source link, or reproduction receipt when available.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Publication check
+      options:
+        - label: I have not included credentials, private identifiers, restricted competition material, or raw third-party files.
+          required: true

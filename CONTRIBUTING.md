@@ -16,6 +16,28 @@ A repository may be hosted by OpenKaggle or remain under your own account and be
 
 We may suggest splitting a very large workspace by competition or artifact boundary. This is organizational help, not a requirement that every project become elaborate.
 
+## Choose a contribution route
+
+Use the issue form that best describes the work before opening a pull request:
+
+- **Bug:** a focused, reproducible problem in code, documentation, or a
+  published workflow;
+- **Reproduction:** a rerun that matched, differed, or failed, with its
+  revision and evidence;
+- **Provenance or license:** a source, attribution, or redistribution question;
+- **Research proposal:** a new competition archive, method, experiment, or
+  external repository; and
+- **Archive correction or withdrawal:** a public request to revise, restrict,
+  or replace a published record.
+
+Use the private contact in `SECURITY.md` for credentials, personal data,
+restricted competition material, security findings, or legal concerns. Do not
+make a public pull request merely to report sensitive content. If the work is
+large, describe the artifact host, manifest, source revision, and checksums;
+size alone is not a reason to hide an otherwise permitted user-produced
+artifact, and a public repository is not automatically allowed to mirror an
+official or third-party file.
+
 ## Contributing to an existing project
 
 1. Read the project README and current status.

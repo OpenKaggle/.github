@@ -17,3 +17,9 @@ upstream models, or third-party notebooks. Their sources, licenses, and
 versions are listed in [`DATA_SOURCES.md`](DATA_SOURCES.md). User-authored
 derivatives and large release assets are identified separately with their
 provenance and checksums.
+
+### References
+
+Add real related papers, proceedings, theses, benchmark papers, or upstream
+methods here when they are relevant. A repository without a corresponding
+paper should not invent one; cite the software/archive release above instead.
