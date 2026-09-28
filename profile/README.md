@@ -8,7 +8,7 @@
 
 <p><sub>credo · make it public, make it useful.</sub></p>
 
-**Start here:** [🦆 Take a seat at the OpenKaggle bench](../JOIN.md) · [Contributing](../CONTRIBUTING.md) · [Publishing](../PUBLISHING.md) · [Citation](../CITATION_POLICY.md) · [Support](../SUPPORT.md)
+**Start here:** [🦆 Take a seat at the OpenKaggle bench](https://github.com/OpenKaggle/.github/issues/1) · [Contributing](../CONTRIBUTING.md) · [Publishing](../PUBLISHING.md) · [Citation](../CITATION_POLICY.md) · [Support](../SUPPORT.md)
 
 OpenKaggle is a small, open workbench for sharing the real texture of Kaggle
 research: code to try, experiments to compare, notes to learn from, and ideas
@@ -25,7 +25,7 @@ need a polished paper to join.
 
 Bring a notebook, a question, a useful correction, or just curiosity. One
 sentence is enough to start; membership is optional. Visit the pinned
-**OpenKaggle bench** issue and write:
+[**OpenKaggle bench** issue](https://github.com/OpenKaggle/.github/issues/1) and write:
 
 > am I at the bench? 🦆
 
@@ -33,7 +33,7 @@ Your GitHub comment is your identity—no username field, no form, and no upload
 The bench will send a membership invitation when capacity is available.
 
 <p align="left">
-  <a href="../JOIN.md">
+  <a href="https://github.com/OpenKaggle/.github/issues/1">
     <img src="https://raw.githubusercontent.com/OpenKaggle/brand-assets/main/assets/openkaggle-join-button-v1.png" alt="Take a seat at the OpenKaggle bench" width="320">
   </a>
 </p>
@@ -60,7 +60,7 @@ what evidence supports its claims, and what remains outside its scope.
 
 There are several good ways to participate:
 
-- request organization membership by leaving the short comment in the pinned [OpenKaggle bench](../JOIN.md);
+- request organization membership by leaving the short comment in the pinned [OpenKaggle bench](https://github.com/OpenKaggle/.github/issues/1);
 - propose a repository for the OpenKaggle organization;
 - keep a repository under your own account and ask us to list it in the portfolio;
 - contribute a focused improvement to an existing project;
