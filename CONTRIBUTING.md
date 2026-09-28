@@ -110,6 +110,9 @@ For the full release gate and the distinction between public research,
 official-data acquisition records, reviewed derivatives, and private
 preservation, read [Publishing research from a competition workspace](PUBLISHING.md).
 
+For organization membership, read [JOIN.md](JOIN.md). Membership is optional,
+and repository access is granted separately from a successful invitation.
+
 For the shared academic-style citation shape, use the
 [citation and archival standard](CITATION_POLICY.md) and copy the templates
 from [`templates/`](templates/). Each repository should expose a

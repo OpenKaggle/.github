@@ -1,0 +1,51 @@
+name: Join OpenKaggle
+description: Ask to join the OpenKaggle GitHub organization and help in public.
+title: "[Join] "
+labels:
+  - join-request
+  - needs-review
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        OpenKaggle is a small, open workbench for competition research and
+        reproducible experiments. This form starts a reviewable invitation
+        request; it does not grant access automatically.
+  - type: input
+    id: github_username
+    attributes:
+      label: GitHub username
+      description: This must be the account that opened this issue.
+      placeholder: octocat
+    validations:
+      required: true
+  - type: dropdown
+    id: interest
+    attributes:
+      label: How would you like to participate?
+      options:
+        - Share a competition notebook, tool, or research archive
+        - Reproduce or review an existing OpenKaggle project
+        - Help with documentation, tests, or provenance
+        - Explore first and learn with the community
+    validations:
+      required: true
+  - type: textarea
+    id: contribution
+    attributes:
+      label: What would you like to bring?
+      description: A link or a short description is enough; early ideas are welcome.
+      placeholder: I would like to share...
+    validations:
+      required: true
+  - type: checkboxes
+    id: agreements
+    attributes:
+      label: Before we review
+      options:
+        - label: I have read and will follow the Code of Conduct.
+          required: true
+        - label: I will not upload credentials, restricted competition data, or third-party material without permission.
+          required: true
+        - label: I understand that an owner may ask for clarification before sending an invitation.
+          required: true

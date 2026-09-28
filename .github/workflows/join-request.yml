@@ -1,0 +1,99 @@
+name: Triage OpenKaggle join requests
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  triage:
+    if: >-
+      startsWith(github.event.issue.title, '[Join]') ||
+      contains(github.event.issue.labels.*.name, 'join-request')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Triage request or send owner-approved invitation
+        uses: actions/github-script@v7
+        env:
+          ORG_MEMBERS_TOKEN: ${{ secrets.OPENKAGGLE_ORG_MEMBERS_TOKEN }}
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const issueNumber = issue.number;
+            const labels = new Set((issue.labels || []).map((label) => label.name));
+            const eventName = context.eventName;
+            const comment = context.payload.comment;
+            const marker = '<!-- openkaggle-join-bot -->';
+
+            async function ensureLabel(name, color, description) {
+              if (labels.has(name)) return;
+              try {
+                await github.rest.issues.getLabel({ owner, repo, name });
+              } catch (error) {
+                if (error.status !== 404) throw error;
+                await github.rest.issues.createLabel({ owner, repo, name, color, description });
+              }
+            }
+
+            await ensureLabel('join-request', '0e8a16', 'Request to join the OpenKaggle organization');
+            await ensureLabel('needs-review', 'fbca04', 'Waiting for a maintainer review');
+            await ensureLabel('invited', '5319e7', 'An organization invitation was sent');
+
+            const trustedApprover = comment && ['OWNER', 'MEMBER'].includes(comment.author_association);
+            const command = comment?.body?.trim().toLowerCase();
+
+            if (eventName === 'issue_comment' && command === '/invite') {
+              if (!trustedApprover) {
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number: issueNumber,
+                  body: `${marker}\nOnly an OpenKaggle owner or member can approve an invitation. The request remains queued for review.`
+                });
+                return;
+              }
+              if (!process.env.ORG_MEMBERS_TOKEN) {
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number: issueNumber,
+                  body: `${marker}\nThe request is approved for review, but the organization membership token is not configured. An owner must add the \`OPENKAGGLE_ORG_MEMBERS_TOKEN\` Actions secret before an invitation can be sent.`
+                });
+                return;
+              }
+
+              const username = issue.user.login;
+              if (!/^[A-Za-z0-9-]{1,39}$/.test(username) || username.endsWith('-')) {
+                throw new Error(`Unexpected GitHub login format: ${username}`);
+              }
+
+              const response = await github.request('PUT /orgs/{org}/memberships/{username}', {
+                org: 'OpenKaggle',
+                username,
+                role: 'member',
+                headers: {
+                  authorization: `Bearer ${process.env.ORG_MEMBERS_TOKEN}`,
+                  'X-GitHub-Api-Version': '2022-11-28',
+                  accept: 'application/vnd.github+json'
+                }
+              });
+
+              await github.rest.issues.addLabels({ owner, repo, issue_number: issueNumber, labels: ['invited'] });
+              await github.rest.issues.removeLabel({ owner, repo, issue_number: issueNumber, name: 'needs-review' }).catch(() => {});
+              await github.rest.issues.createComment({
+                owner, repo, issue_number: issueNumber,
+                body: `${marker}\nAn organization invitation was sent to **@${username}**. Please accept it from GitHub notifications or email; GitHub does not allow this workflow to accept the invitation on the member's behalf. (API status: ${response.status})`
+              });
+              return;
+            }
+
+            if (!issue.body?.includes(marker)) {
+              await github.rest.issues.createComment({
+                owner, repo, issue_number: issueNumber,
+                body: `${marker}\nThanks for the request. An owner will review the account and contribution context. If everything is clear, an owner can comment \`/invite\`; until then, please do not paste credentials, private competition rows, or third-party files here.`
+              });
+            }
+            await github.rest.issues.addLabels({ owner, repo, issue_number: issueNumber, labels: ['join-request', 'needs-review'] });
