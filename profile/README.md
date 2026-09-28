@@ -8,11 +8,19 @@
 
 **Start here:** [Contributing](../CONTRIBUTING.md) · [Publishing](../PUBLISHING.md) · [Citation](../CITATION_POLICY.md) · [Support](../SUPPORT.md)
 
-OpenKaggle is a community workbench for transparent competition research: code people can inspect, experiments people can reproduce, and notes that make the work more useful than a leaderboard score alone.
+OpenKaggle is a small, open workbench for sharing the real texture of Kaggle
+research: code to try, experiments to compare, notes to learn from, and ideas
+that are still taking shape.
 
-It is maintained in public by competitors, students, engineers, and researchers who like learning by building. A baseline, a notebook, a technical tool, a careful correction, a useful failure, or a complete system can all start a good conversation here when the provenance and evidence are clear.
+It is a place for competitors, students, engineers, and curious builders who
+like making things in public. Bring a notebook, a useful script, a clean
+baseline, a surprising result, a careful correction, or a question. We care
+about where work came from and what was actually tested, but you do not need a
+polished paper to join.
 
-Bring the work you have. Curiosity, evidence, and generosity are enough; polish can come later.
+OpenKaggle 是一个开放的小型工作台：分享代码、实验、记录和还在形成中的
+想法。你可以带来一个 notebook、一段工具代码、一次失败的尝试，或者一个
+值得继续追问的问题。先把东西放到桌面上，慢慢把它做清楚。
 
 ## An open workbench
 
@@ -110,15 +118,16 @@ and a versioned release or DOI when one exists.
 
 Unclear cases are discussed patiently. It is always acceptable to publish the method and provenance record before publishing the artifact itself.
 
-## The atmosphere we want
+## Around the workbench
 
-OpenKaggle is a friendly, independent workshop: serious about evidence and
-light on ceremony. We value patient explanations, honest uncertainty, compact
-experiments, useful archives, and review that leaves both the work and the
-person sharing it in a better place.
+OpenKaggle is small on purpose. Some projects arrive tidy; others are still on
+the workbench. That is fine. A useful notebook, a negative result, a clean
+reproduction, or one well-described question can all be worth sharing.
 
-Come with a complete system or a single interesting trace. There is room at
-the bench.
+We care about credit, provenance, and boundaries, while leaving room for
+curiosity, humor, and unfinished work. If you find something useful, cite it,
+try it, tell us what changed, or bring your own version. There is room at the
+bench.
 
 ## Independence
 
