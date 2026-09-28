@@ -19,10 +19,15 @@ baseline, a surprising result, a careful correction, or a question.
 We care about where work came from and what was actually tested, but you do not
 need a polished paper to join.
 
-## 👋 [Join OpenKaggle in about a minute →](https://github.com/OpenKaggle/.github/issues/new?template=join.yml)
+<p align="center">
+  <a href="https://github.com/OpenKaggle/.github/issues/new?template=join.yml">
+    <img src="https://raw.githubusercontent.com/OpenKaggle/brand-assets/main/assets/openkaggle-join-button-v1.png" alt="Join OpenKaggle — start in about a minute" width="760">
+  </a>
+</p>
 
-No polished project. No upload. Just choose what interests you, write one
-sentence, and we will show you the next step.
+<p align="center">
+  <a href="https://github.com/OpenKaggle/.github/issues/new?template=join.yml">Open the one-minute Join form</a> · No polished project or upload needed.
+</p>
 
 ### New here? 🦆
 
