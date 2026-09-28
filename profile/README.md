@@ -69,6 +69,7 @@ This is a growing map of shared tools, careful archives, and competition work.
 | Repository | Scope |
 | --- | --- |
 | [`nemotron-reasoning-research`](https://github.com/OpenKaggle/nemotron-reasoning-research) | Reasoning competition research, experiments, reports, and submission methods |
+| [`nemotron-evaluation-records`](https://github.com/OpenKaggle/nemotron-evaluation-records) | Content-minimized report indexes, schemas, hashes, and aggregate evidence |
 | [`neurogolf-2026-onnx-research`](https://github.com/OpenKaggle/neurogolf-2026-onnx-research) | ONNX construction, optimization, validation, and competition artifacts |
 | [`maze-crawler-research`](https://github.com/OpenKaggle/maze-crawler-research) | Agent development, evaluation work, experiment history, and reproducibility material |
 | [`arc-agi-2-paper-track-research`](https://github.com/OpenKaggle/arc-agi-2-paper-track-research) | ARC2 methods, paper materials, evaluation records, and public notebooks |
