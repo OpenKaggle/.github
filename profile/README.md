@@ -29,7 +29,6 @@ sentence is enough to start; membership is optional. Visit the pinned
 
 > am I at the bench? 🦆
 
-Your GitHub comment is your identity—no username field, no form, and no upload.
 The bench will send a membership invitation when capacity is available.
 
 <p align="left">
