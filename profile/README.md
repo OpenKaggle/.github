@@ -6,6 +6,8 @@
 
 **An open workbench for sharing how Kaggle research actually gets made.**
 
+**Start here:** [Contributing](../CONTRIBUTING.md) · [Publishing](../PUBLISHING.md) · [Citation](../CITATION_POLICY.md) · [Support](../SUPPORT.md)
+
 OpenKaggle is a community workbench for transparent competition research: code people can inspect, experiments people can reproduce, and notes that make the work more useful than a leaderboard score alone.
 
 It is maintained in public by competitors, students, engineers, and researchers who like learning by building. A baseline, a notebook, a technical tool, a careful correction, a useful failure, or a complete system can all start a good conversation here when the provenance and evidence are clear.
