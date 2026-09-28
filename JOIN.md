@@ -7,8 +7,9 @@ joining the organization.
 
 ## The request flow
 
-1. Open the **Join OpenKaggle** issue form in this repository.
-2. Use your own GitHub account and describe what you would like to share or
+1. Open the [Join OpenKaggle issue form](https://github.com/OpenKaggle/.github/issues/new?template=join.yml).
+2. Use your own GitHub account. GitHub records the account automatically, so
+   there is no username to copy or type. Describe what you would like to share or
    learn. Do not include credentials, private competition rows, or third-party
    files.
 3. When the username matches the account that opened the issue and all required

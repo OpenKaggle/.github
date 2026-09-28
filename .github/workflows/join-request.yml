@@ -38,6 +38,14 @@ jobs:
             const comment = context.payload.comment;
             const marker = '<!-- openkaggle-join-bot -->';
 
+            if (issue.user.type !== 'User') {
+              await github.rest.issues.createComment({
+                owner, repo, issue_number: issueNumber,
+                body: `${marker}\nThis form is for a human GitHub account. The request is left open without an automatic invitation.`
+              });
+              return;
+            }
+
             async function ensureLabel(name, color, description) {
               if (labels.has(name)) return;
               try {
@@ -129,14 +137,12 @@ jobs:
             }
 
             const body = issue.body || '';
-            const usernameField = body.match(/### GitHub username\s+([^\n]+)/i)?.[1]?.trim();
             const requiredChecks = [
               'I have read and will follow the Code of Conduct.',
               'I will not upload credentials, restricted competition data, or third-party material without permission.',
               'I understand that GitHub requires me to accept the invitation before membership becomes active.'
             ];
             const formComplete = Boolean(
-              usernameField && usernameField.toLowerCase() === issue.user.login.toLowerCase() &&
               requiredChecks.every((text) => body.includes(`- [x] ${text}`))
             );
 

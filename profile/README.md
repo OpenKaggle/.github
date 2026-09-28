@@ -6,7 +6,7 @@
 
 **An open workbench for sharing how Kaggle research actually gets made.**
 
-**Start here:** [Join](../JOIN.md) · [Contributing](../CONTRIBUTING.md) · [Publishing](../PUBLISHING.md) · [Citation](../CITATION_POLICY.md) · [Support](../SUPPORT.md)
+**Start here:** [Join OpenKaggle](https://github.com/OpenKaggle/.github/issues/new?template=join.yml) · [Contributing](../CONTRIBUTING.md) · [Publishing](../PUBLISHING.md) · [Citation](../CITATION_POLICY.md) · [Support](../SUPPORT.md)
 
 OpenKaggle is a small, open workbench for sharing the real texture of Kaggle
 research: code to try, experiments to compare, notes to learn from, and ideas
@@ -39,7 +39,7 @@ what evidence supports its claims, and what remains outside its scope.
 
 There are several good ways to participate:
 
-- request organization membership through the [Join OpenKaggle](../JOIN.md) flow;
+- request organization membership through the [Join OpenKaggle form](https://github.com/OpenKaggle/.github/issues/new?template=join.yml);
 - propose a repository for the OpenKaggle organization;
 - keep a repository under your own account and ask us to list it in the portfolio;
 - contribute a focused improvement to an existing project;

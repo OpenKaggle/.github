@@ -10,15 +10,8 @@ body:
       value: >-
         OpenKaggle is a small, open workbench for competition research and
         reproducible experiments. A complete form automatically starts an
-        invitation; GitHub still asks the invited account to accept it.
-  - type: input
-    id: github_username
-    attributes:
-      label: GitHub username
-      description: This must be the account that opened this issue.
-      placeholder: octocat
-    validations:
-      required: true
+        invitation for the account that opened this issue; GitHub still asks
+        that account to accept it.
   - type: dropdown
     id: interest
     attributes:
@@ -34,14 +27,14 @@ body:
     id: contribution
     attributes:
       label: What would you like to bring?
-      description: A link or a short description is enough; early ideas are welcome.
-      placeholder: I would like to share...
+      description: One sentence or a link is enough. Early ideas are welcome.
+      placeholder: I would like to share or learn...
     validations:
       required: true
   - type: checkboxes
     id: agreements
     attributes:
-      label: Before we review
+      label: Before we send the invitation
       options:
         - label: I have read and will follow the Code of Conduct.
           required: true
