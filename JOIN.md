@@ -12,9 +12,9 @@ joining the organization.
    there is no username to copy or type. Describe what you would like to share or
    learn. Do not include credentials, private competition rows, or third-party
    files.
-3. When the username matches the account that opened the issue and all required
-   checkboxes are selected, the workflow sends a least-privilege member
-   invitation automatically. No OpenKaggle owner comment is required.
+3. When the required checkboxes are selected, the workflow uses the account
+   that opened the issue and sends a least-privilege member invitation
+   automatically. No OpenKaggle owner comment is required.
 4. The applicant must accept the invitation in GitHub. This is a GitHub account
    security boundary: the workflow cannot and should not accept it on another
    person's behalf. A member or owner can still use `/invite` as a manual
