@@ -29,7 +29,8 @@ and does not send invitations.
 The workflow is idempotent and recoverable: it serializes runs for one issue,
 checks whether the account is already active or pending before sending a new
 invitation, retries transient API failures three times, records an
-`invite-failed` label without exposing credentials, and supports a member/owner
+`invite-failed` label without exposing credentials, records a one-time
+`invite-blocked` setup state without comment spam, and supports a member/owner
 `/invite` retry. Workflow changes become active only after they are merged into
 the repository's default branch; pull-request branches are not used to grant
 membership.

@@ -60,16 +60,20 @@ jobs:
             await ensureLabel('needs-review', 'fbca04', 'Waiting for a maintainer review');
             await ensureLabel('invited', '5319e7', 'An organization invitation was sent');
             await ensureLabel('invite-failed', 'd93f0b', 'Automatic invitation needs a retry');
+            await ensureLabel('invite-blocked', 'cfd3d7', 'Automatic invitation is waiting for organization setup');
             await ensureLabel('bot-triaged', 'bfdadc', 'The join request received the standard triage response');
 
             const command = comment?.body?.trim().toLowerCase();
 
             async function inviteApplicant() {
               if (!process.env.ORG_MEMBERS_TOKEN) {
-                await github.rest.issues.createComment({
-                  owner, repo, issue_number: issueNumber,
-                  body: `${marker}\nThe request is complete, but automatic invitations are not enabled yet. An owner must add the private \`OPENKAGGLE_ORG_MEMBERS_TOKEN\` Actions secret.`
-                });
+                if (!labels.has('invite-blocked')) {
+                  await github.rest.issues.addLabels({ owner, repo, issue_number: issueNumber, labels: ['invite-blocked'] });
+                  await github.rest.issues.createComment({
+                    owner, repo, issue_number: issueNumber,
+                    body: `${marker}\nThe request is complete, but automatic invitations are not enabled yet. An owner must add the private \`OPENKAGGLE_ORG_MEMBERS_TOKEN\` Actions secret. The workflow will retry on the next edit or manual \`/invite\` command.`
+                  });
+                }
                 return;
               }
 
@@ -130,6 +134,7 @@ jobs:
               await github.rest.issues.addLabels({ owner, repo, issue_number: issueNumber, labels: ['invited'] });
               await github.rest.issues.removeLabel({ owner, repo, issue_number: issueNumber, name: 'needs-review' }).catch(() => {});
               await github.rest.issues.removeLabel({ owner, repo, issue_number: issueNumber, name: 'invite-failed' }).catch(() => {});
+              await github.rest.issues.removeLabel({ owner, repo, issue_number: issueNumber, name: 'invite-blocked' }).catch(() => {});
               await github.rest.issues.createComment({
                 owner, repo, issue_number: issueNumber,
                 body: `${marker}\nAn organization invitation was sent automatically to **@${username}**. Please accept it from GitHub notifications or email; GitHub does not allow this workflow to accept the invitation on the member's behalf. (API status: ${response.status})`
