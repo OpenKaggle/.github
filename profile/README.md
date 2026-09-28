@@ -21,20 +21,19 @@ baseline, a surprising result, a careful correction, or a question.
 We care about where work came from and what was actually tested, but you do not
 need a polished paper to join.
 
-<p align="left">
-  <a href="https://github.com/OpenKaggle/.github/issues/new?template=join.yml">
-    <img src="https://raw.githubusercontent.com/OpenKaggle/brand-assets/main/assets/openkaggle-join-button-v1.png" alt="Join OpenKaggle — start in about a minute" width="280">
-  </a>
-</p>
-
-<p align="left">
-  <small><a href="https://github.com/OpenKaggle/.github/issues/new?template=join.yml">Open the one-minute Join form →</a> · No upload needed.</small>
-</p>
-
 ### New here? 🦆
 
 Bring a notebook, a question, a useful correction, or just curiosity. One
 sentence is enough to start; [membership is optional](https://github.com/OpenKaggle/.github/blob/main/JOIN.md#you-can-participate-without-joining).
+You can use the button below or [open the one-minute Join form](https://github.com/OpenKaggle/.github/issues/new?template=join.yml).
+
+<p align="left">
+  <a href="https://github.com/OpenKaggle/.github/issues/new?template=join.yml">
+    <img src="https://raw.githubusercontent.com/OpenKaggle/brand-assets/main/assets/openkaggle-join-button-v1.png" alt="Join OpenKaggle — start in about a minute" width="320">
+  </a>
+</p>
+
+<hr>
 
 ## An open workbench
 
