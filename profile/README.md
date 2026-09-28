@@ -8,7 +8,7 @@
 
 <p><sub>credo · make it public, make it useful.</sub></p>
 
-**Start here:** [👋 Join OpenKaggle](https://github.com/OpenKaggle/.github/issues/new?template=join.yml) · [Contributing](../CONTRIBUTING.md) · [Publishing](../PUBLISHING.md) · [Citation](../CITATION_POLICY.md) · [Support](../SUPPORT.md)
+**Start here:** [🦆 Take a seat at the OpenKaggle bench](../JOIN.md) · [Contributing](../CONTRIBUTING.md) · [Publishing](../PUBLISHING.md) · [Citation](../CITATION_POLICY.md) · [Support](../SUPPORT.md)
 
 OpenKaggle is a small, open workbench for sharing the real texture of Kaggle
 research: code to try, experiments to compare, notes to learn from, and ideas
@@ -24,12 +24,17 @@ need a polished paper to join.
 ### New here? 🦆
 
 Bring a notebook, a question, a useful correction, or just curiosity. One
-sentence is enough to start; [membership is optional](https://github.com/OpenKaggle/.github/blob/main/JOIN.md#you-can-participate-without-joining).
-You can use the button below or [open the one-minute Join form](https://github.com/OpenKaggle/.github/issues/new?template=join.yml).
+sentence is enough to start; membership is optional. Visit the pinned
+**OpenKaggle bench** issue and write:
+
+> am I at the bench? 🦆
+
+Your GitHub comment is your identity—no username field, no form, and no upload.
+The bench will send a membership invitation when capacity is available.
 
 <p align="left">
-  <a href="https://github.com/OpenKaggle/.github/issues/new?template=join.yml">
-    <img src="https://raw.githubusercontent.com/OpenKaggle/brand-assets/main/assets/openkaggle-join-button-v1.png" alt="Join OpenKaggle — start in about a minute" width="320">
+  <a href="../JOIN.md">
+    <img src="https://raw.githubusercontent.com/OpenKaggle/brand-assets/main/assets/openkaggle-join-button-v1.png" alt="Take a seat at the OpenKaggle bench" width="320">
   </a>
 </p>
 
@@ -55,7 +60,7 @@ what evidence supports its claims, and what remains outside its scope.
 
 There are several good ways to participate:
 
-- request organization membership through the [Join OpenKaggle form](https://github.com/OpenKaggle/.github/issues/new?template=join.yml);
+- request organization membership by leaving the short comment in the pinned [OpenKaggle bench](../JOIN.md);
 - propose a repository for the OpenKaggle organization;
 - keep a repository under your own account and ask us to list it in the portfolio;
 - contribute a focused improvement to an existing project;
