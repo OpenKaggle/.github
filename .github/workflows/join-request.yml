@@ -71,7 +71,7 @@ jobs:
                   await github.rest.issues.addLabels({ owner, repo, issue_number: issueNumber, labels: ['invite-blocked'] });
                   await github.rest.issues.createComment({
                     owner, repo, issue_number: issueNumber,
-                    body: `${marker}\nThe request is complete, but automatic invitations are not enabled yet. An owner must add the private \`OPENKAGGLE_ORG_MEMBERS_TOKEN\` Actions secret. The workflow will retry on the next edit or manual \`/invite\` command.`
+                    body: `${marker}\n👋 Thanks for joining us! Your request is ready.\n\nAutomatic invitations are waiting for one-time organization setup. The workflow will retry after setup or when an owner/member uses \`/invite\`.`
                   });
                 }
                 return;
@@ -100,7 +100,7 @@ jobs:
                   await github.rest.issues.addLabels({ owner, repo, issue_number: issueNumber, labels: ['invited'] });
                   await github.rest.issues.createComment({
                     owner, repo, issue_number: issueNumber,
-                    body: `${marker}\n**@${username}** is already an active OpenKaggle member. No new invitation was sent.`
+                    body: `${marker}\n🎉 **@${username}** is already an OpenKaggle member. You are all set!`
                   });
                   return;
                 }
@@ -108,7 +108,7 @@ jobs:
                   await github.rest.issues.addLabels({ owner, repo, issue_number: issueNumber, labels: ['invited'] });
                   await github.rest.issues.createComment({
                     owner, repo, issue_number: issueNumber,
-                    body: `${marker}\nAn OpenKaggle invitation is already pending for **@${username}**. Please accept it from GitHub notifications or email.`
+                    body: `${marker}\n💌 An OpenKaggle invitation is already waiting for **@${username}**. Check GitHub notifications first, then click **Accept invitation**.`
                   });
                   return;
                 }
@@ -137,7 +137,7 @@ jobs:
               await github.rest.issues.removeLabel({ owner, repo, issue_number: issueNumber, name: 'invite-blocked' }).catch(() => {});
               await github.rest.issues.createComment({
                 owner, repo, issue_number: issueNumber,
-                body: `${marker}\nYour OpenKaggle invitation was sent automatically to **@${username}**. Next: open GitHub notifications and click **Accept invitation**. If email notifications are enabled, GitHub may also send an organization-invitation email; delivery can vary, so notifications are the reliable place to check. If nothing appears, check the invitation page and edit this issue or ask an owner/member to use \`/invite\` for a retry. (API status: ${response.status})`
+                body: `${marker}\n🎉 **Your OpenKaggle invitation is on its way, @${username}!**\n\n1. Open GitHub notifications.\n2. Click **Accept invitation**.\n3. If email notifications are enabled, GitHub may also send an invitation email.\n\nNothing showing yet? Check notifications first, then edit this issue or ask an owner/member to use \`/invite\` for a retry.`
               });
             }
 
@@ -170,7 +170,7 @@ jobs:
               if (!trustedApprover) {
                 await github.rest.issues.createComment({
                   owner, repo, issue_number: issueNumber,
-                  body: `${marker}\nAutomatic invitations are enabled for complete forms. Only an OpenKaggle owner or member may use the manual fallback command.`
+                  body: `${marker}\n👋 The automatic path is already available for a complete form. Only an OpenKaggle owner or member can use the manual retry command.`
                 });
                 return;
               }
@@ -193,7 +193,7 @@ jobs:
               await github.rest.issues.addLabels({ owner, repo, issue_number: issueNumber, labels: ['bot-triaged'] });
               await github.rest.issues.createComment({
                 owner, repo, issue_number: issueNumber,
-                body: `${marker}\nThanks for the request. When the form fields and required checkboxes are complete, the workflow sends an invitation automatically. Please do not paste credentials, private competition rows, or third-party files here.`
+                body: `${marker}\n👋 Thanks for stopping by! Finish the small form above and we will take it from there. No code or upload is required. Please keep credentials and private competition files out of the issue.`
               });
             }
             await github.rest.issues.addLabels({ owner, repo, issue_number: issueNumber, labels: ['join-request', 'needs-review'] });

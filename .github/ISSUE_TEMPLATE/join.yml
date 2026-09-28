@@ -7,18 +7,18 @@ labels:
 body:
   - type: markdown
     attributes:
-      value: >-
-        OpenKaggle is a small, open workbench for competition research and
-        reproducible experiments. A complete form automatically starts an
-        invitation for the account that opened this issue; GitHub still asks
-        that account to accept it. Membership is optional: public issues and
-        pull requests are open even if you do not join the organization.
-        Welcome — this should take about a minute. You do not need a polished
-        project, a repository, or an attachment to join.
+      value: |
+        👋 **Welcome to OpenKaggle!**
+
+        This takes about a minute. Bring an idea, a question, or simple
+        curiosity — you do not need a polished project, repository, or file.
+
+        🦆 Membership is optional. Public issues and pull requests are open to
+        everyone, even if you do not join the organization.
   - type: dropdown
     id: interest
     attributes:
-      label: How would you like to participate?
+      label: How would you like to join the bench?
       options:
         - Share a competition notebook, tool, or research archive
         - Reproduce or review an existing OpenKaggle project
@@ -29,15 +29,15 @@ body:
   - type: textarea
     id: contribution
     attributes:
-      label: What would you like to bring?
-      description: One sentence or a link is enough. Early ideas are welcome.
-      placeholder: I would like to share or learn...
+      label: What would you like to try or share?
+      description: One sentence or a link is enough — early ideas are welcome.
+      placeholder: I would like to try or share...
     validations:
       required: true
   - type: checkboxes
     id: agreements
     attributes:
-      label: Before we send the invitation
+      label: A quick promise to the community
       options:
         - label: I have read and will follow the Code of Conduct.
           required: true
@@ -47,9 +47,12 @@ body:
           required: true
   - type: markdown
     attributes:
-      value: >-
-        **What happens next:** submit this form, wait for the automatic GitHub
-        invitation, then click **Accept invitation** in GitHub notifications or
-        the invitation email. If you only want to read or contribute publicly,
-        you can stop here without joining. Please never paste passwords, API
-        tokens, private competition files, or other people's restricted files.
+      value: |
+        ✨ **What happens next**
+
+        Submit the form → watch GitHub notifications → click **Accept
+        invitation**. GitHub may also send an invitation email.
+
+        No upload is needed. Please keep passwords, API tokens, private
+        competition files, and other people's restricted files out of this
+        issue.

@@ -1,30 +1,36 @@
-# Joining OpenKaggle
+# 👋 Join OpenKaggle
 
-OpenKaggle is open to competitors, students, engineers, and curious builders
-who want to share useful work in public. Organization membership is optional;
-you can read and contribute through public issues and pull requests without
-joining the organization.
+Welcome to the workbench. OpenKaggle is for competitors, students, engineers,
+and curious builders who enjoy making useful things in public.
 
-## The request flow
+You do not need a polished paper, a finished repository, or a perfect idea.
+
+## The one-minute path
 
 1. Open the [Join OpenKaggle issue form](https://github.com/OpenKaggle/.github/issues/new?template=join.yml).
-2. Use your own GitHub account. GitHub records the account automatically, so
-   there is no username to copy or type. Describe what you would like to share or
-   learn. One sentence is enough; you do not need a polished project or an
-   attachment. Do not include credentials, private competition rows, or
-   third-party files.
-3. When the required checkboxes are selected, the workflow uses the account
-   that opened the issue and sends a least-privilege member invitation
-   automatically. No OpenKaggle owner comment is required.
-4. The applicant must accept the invitation in GitHub. This is a GitHub account
-   security boundary: the workflow cannot and should not accept it on another
-   person's behalf. A member or owner can still use `/invite` as a manual
-   fallback if an edited issue needs a retry.
+2. Choose what sounds interesting and write one sentence.
+3. Tick the three small community promises and submit.
+4. Watch GitHub notifications and click **Accept invitation**.
 
-After the invitation is sent, check GitHub notifications first. If email
-notifications are enabled for the account, GitHub may also send an
-organization-invitation email, but email delivery is not guaranteed. No code,
-repository, or data upload is required to join.
+🎉 That is it. No code, repository, or data upload is required.
+
+If email notifications are enabled, GitHub may also send an organization
+invitation email. Notifications are the reliable place to check.
+
+## You can participate without joining
+
+Membership is optional. You can read repositories, open public issues, send
+pull requests, reproduce an experiment, or share a correction without joining
+the organization.
+
+## Keep the welcome safe
+
+Please do not paste passwords, API tokens, private competition rows, or other
+people's restricted files into an issue. A link, short note, or question is
+enough.
+
+<details>
+<summary>For maintainers: how the invitation workflow stays reliable</summary>
 
 The automatic invitation step requires the organization owner to configure the
 private Actions secret `OPENKAGGLE_ORG_MEMBERS_TOKEN` with the minimum
@@ -47,3 +53,4 @@ people, which would make the organization a spam and account-takeover vector.
 
 Membership is not a promise of repository write access. Repository permissions
 and teams are granted separately and only when a project needs them.
+</details>
