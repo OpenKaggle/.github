@@ -74,16 +74,17 @@ This is a growing map of shared tools, careful archives, and competition work.
 | [`nemotron-reasoning-research`](https://github.com/OpenKaggle/nemotron-reasoning-research) | Reasoning competition research, experiments, reports, and submission methods |
 | [`neurogolf-2026-onnx-research`](https://github.com/OpenKaggle/neurogolf-2026-onnx-research) | ONNX construction, optimization, validation, and competition artifacts |
 | [`maze-crawler-research`](https://github.com/OpenKaggle/maze-crawler-research) | Agent development, evaluation work, experiment history, and reproducibility material |
-| [`arc2-paper-research`](https://github.com/OpenKaggle/arc2-paper-research) | ARC2 methods, paper materials, evaluation records, and public notebooks |
+| [`arc-agi-2-paper-track-research`](https://github.com/OpenKaggle/arc-agi-2-paper-track-research) | ARC2 methods, paper materials, evaluation records, and public notebooks |
 | [`arc3-2026-research`](https://github.com/OpenKaggle/arc3-2026-research) | ARC-AGI-3 feasibility, policy, and baseline research |
 | [`biohub-cell-tracking-research`](https://github.com/OpenKaggle/biohub-cell-tracking-research) | Cell-tracking methods, tests, campaign records, and provenance |
 | [`cuhk-x-research`](https://github.com/OpenKaggle/cuhk-x-research) | CUHK-X large- and small-track research in one reviewable archive |
 | [`kaggriculture-research`](https://github.com/OpenKaggle/kaggriculture-research) | Agents, evaluators, research notes, and experiment receipts |
-| [`playground-s6e9-research`](https://github.com/OpenKaggle/playground-s6e9-research) | Playground-series modelling, validation, and reproducibility materials |
+| [`playground-series-s6e9-research`](https://github.com/OpenKaggle/playground-series-s6e9-research) | Playground-series modelling, validation, and reproducibility materials |
 | [`poker-transfer-research`](https://github.com/OpenKaggle/poker-transfer-research) | Transfer-detection methods, evaluation protocols, and evidence records |
 | [`rogii-wellbore-geology-research`](https://github.com/OpenKaggle/rogii-wellbore-geology-research) | Wellbore-geology training, selection, validation, and operational research notes |
-| [`tartan-imu-research`](https://github.com/OpenKaggle/tartan-imu-research) | IMU methods, protocols, notebooks, and evidence records |
-| [`traffic-forecasting-research`](https://github.com/OpenKaggle/traffic-forecasting-research) | Traffic-flow methods, notebooks, campaign records, and provenance |
+| [`tartan-imu-iros-2026-research`](https://github.com/OpenKaggle/tartan-imu-iros-2026-research) | IMU methods, protocols, notebooks, and evidence records |
+| [`traffic-flow-2026-research`](https://github.com/OpenKaggle/traffic-flow-2026-research) | Traffic-flow methods, notebooks, campaign records, and provenance |
+| [`tree-species-hsi-2026-research`](https://github.com/OpenKaggle/tree-species-hsi-2026-research) | Tree-species hyperspectral methods, protocols, and evidence |
 | [`hyperspectral-od-2026-research`](https://github.com/OpenKaggle/hyperspectral-od-2026-research) | Hyperspectral object-detection source, protocols, tests, and lightweight evidence |
 
 ## Evidence, without ceremony
